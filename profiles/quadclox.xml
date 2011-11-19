@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<xe>
+
+	<xadgconf>
+		<frameset name="xadgconf 1">
+			<frame left="15"  top="10"  right="280" bottom="272" />
+			<frame left="300" top="10"  right="470" bottom="100" />
+			<frame left="300" top="100" right="470" bottom="190" />
+			<frame left="300" top="190" right="470" bottom="260" />
+		</frameset>
+	</xadgconf>
+
+	<xadgetset name="xadgetset 1">
+		<xadget name="DigiClock.gg" />
+		<xadget name="DigiClock.gg" />
+		<xadget name="DigiClock.gg" />
+		<xadget name="DigiClock.gg" />
+<!--
+-->
+	</xadgetset>
+
+</xe>

@@ -1,0 +1,26 @@
+TARGET = PSP.OBJ/xjse_km
+OBJS = xjse_kmprx.o
+
+# Define to build this as a prx (instead of a static elf)
+BUILD_PRX = 1
+
+# Define the name of our custom exports (minus the .exp extension)
+PRX_EXPORTS = exports.exp
+
+USE_KERNEL_LIBC = 1
+USE_KERNEL_LIBS = 1
+
+INCDIR = 
+#CFLAGS = -O2 -G0 -Wall
+#CFLAGS = -O2 -G0 -Wall -fno-builtin-printf
+CFLAGS = -Os -G0 -Wall -fno-strict-aliasing -fno-builtin-printf
+CXXFLAGS = $(CFLAGS) -fno-exceptions -fno-rtti
+ASFLAGS = $(CFLAGS)
+
+LIBDIR =
+LDFLAGS = -mno-crt0 -nostartfiles
+LIBS = -lpspsdk -lpspnet -lpspnet_inet -lpspnet_apctl -lpspnet_resolver
+
+
+PSPSDK=$(shell psp-config --pspsdk-path)
+include $(PSPSDK)/lib/build.mak

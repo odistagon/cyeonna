@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<xe>
+
+	<xadgconf>
+		<!-- single -->
+		<frameset name="xadgconf 1">
+			<frame left="000" top="0" right="480" bottom="272" />
+			<frame left="000" top="0" right="100" bottom="100" />
+			<frame left="000" top="0" right="100" bottom="100" />
+			<frame left="000" top="0" right="100" bottom="100" />
+		</frameset>
+	</xadgconf>
+
+	<xadgetset name="xadgetset 1">
+		<xadget name="flickr.gg"
+			perms=":xhr:" />
+	</xadgetset>
+
+</xe>

@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<xe>
+
+	<xadgconf>
+		<frameset name="xadgconf 1">
+			<frame left="15"  top="10"  right="280" bottom="272" />
+			<frame left="300" top="10"  right="470" bottom="100" />
+			<frame left="300" top="100" right="470" bottom="190" />
+			<frame left="300" top="190" right="470" bottom="260" />
+		</frameset>
+	</xadgconf>
+
+	<xadgetset name="xadgetset 1">
+		<xadget name="WeatherGlobe.gg" perms="xhr">
+			<x-option name="location setting" value="zipcode" />
+			<option name="location setting" value="city name" />
+			<x-option name="city name" value="Happy, TX (test)" />
+			<option name="city name" value="Tokyo" />
+			<option name="latitude longitude" value="0,0" />
+			<option name="zipcode" value="79042" />
+			<option name="use metric" value="false" />
+			<option name="TrayOpen" value="true" />
+			<option name="language" value="en" />
+			<x-option name="language" value="ja" />
+			<option name="Country" value="US" />
+		</xadget>
+		<xadget name="FlowerPot.gg" />
+		<xadget name="BatteryMeter.gg" />
+		<xadget name="CustomClock.gg" />
+<!--
+		<xadget name="flickr.gg" />
+		<xadget name="DigiClock.gg" />
+		<xadget name="timezone.gg">
+			<option name="Clock0_Offset" value="0" />
+			<option name="Clock0_Design" value="1" />
+			<option name="Clock0_Background" value="2" />
+			<option name="Clock0_Location" value="London" />
+			<option name="Clock1_Offset" value="540" />
+			<option name="Clock1_Design" value="0" />
+			<option name="Clock1_Background" value="1" />
+			<option name="Clock1_Location" value="Tokyo" />
+			<option name="Clock2_Offset" value="0" />
+			<option name="Clock2_Design" value="8" />
+			<option name="Clock2_Background" value="3" />
+			<option name="Clock2_Location" value="Local" />
+			<option name="Total_Clocks" value="3" />
+			<option name="Clock_Arrangement" value="2" />
+			<option name="Show_Seconds" value="1" />
+		</xadget>
+		<xadget name="CustomClock.gg">
+			<option name="picture" value="Clear.png" />
+		</xadget>
+-->
+<!--
+-->
+	</xadgetset>
+
+</xe>

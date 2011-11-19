@@ -1,0 +1,93 @@
+README
+
+Introducing "Cyeonna" ...
+  You may be using small softwares called "widgets" on your computers that can, for instance, show you clocks, weather forecasts, stock prices, and so on.
+  By using this software, you can also do the same on your PSP (Sony PlayStation Portable) unit! It is also useful to make a quick demo like something interactive working on the small screen.
+The Widget engine is built based on the specs from Google Desktop Widgets and you can write widgets with Javascript. For quick start, downloading some widgets from their web site and run is good way. (but it may need some patches)
+* This software is still far from it's goal, just only small part of features are implemented. This software is made with goodwill, but still has posibility to harm your units and to damage your data. This software is provided "as is", please understand that and use on your own risk.
+  - All works about this software attributes to openeddistagon@gmail.com
+    (except many parts that supports this software, see below)
+
+Requirements
+- PSP *homebrew software enabled* (I can't explain how you get this, please google it)
+- A Memorystick (empty 512MB-1GB would be enough)
+
+License
+- GPLv2
+
+Installation
+- Agree the licence and download zip distribution archive from this site
+- Extract the zip into your memstick under \GAME folder (folder name may be different by your PSP FW version)
+- Put the memstick into your PSP and power on. You can launch the app from the icon under GAME menu.
+- Once the app starts, example widgets would be appeared. Please enjoy!
+
+Adding widgets
+- (will be available soon...)
+
+Binary packages (zip archived)
+- (not ready yet, you can build your own)
+
+
+About this software:
+
+  being developed with:
+    gcc, pspdev sdk, 
+
+  debugging on/ with:
+    Debian GNU Linux/ VMWare
+    Ubuntu, glibc, usblink, gtk/ gdk
+    freeglut/ OpenGL, valgrind
+
+  includes @license:
+    newlib @mixed license
+    libjs (a.k.a. SpiderMonkey, part of Mozilla) @MPL/ GPL
+      1.6 pre-built lib and header files in source tree
+    # xpnet (part of Mozilla) @MPL/ GPL -> not used
+    libexpat @MIT License
+    zlib @Open Source License
+    libpng @Open Source License
+    libjpeg (IJG) @Free
+    intraFont @Creative Commons Attribution-Share Alike 3.0 
+
+  includes codes from (thanks):
+    psp tutorials http://www.ghoti.nl/
+    libpng sample http://?
+    libjpeg sample http://?
+
+
+# --HOW TO BUILD (and run)
+
+export PSPDEVDIR=/path/to/pspdev
+ln -s ./js_1.6 ./js
+
+
+# ---Build Linux version
+
+make -C expat/
+make -C xgg/
+make -C xtk/
+make
+
+echo "How to run cyeonna: "
+echo "mkdir -p xadgets "
+echo "# put your widget under xadgets/ with it be *unzippd* "
+echo "# find config/defaut.xml and edit content to config your widgets. "
+echo "LD_LIBRARY_PATH=./Linux.OBJ/ ./Linux.OBJ/cyeonna "
+
+
+# ---Build PSP version
+
+mkdir -p PSP.OBJ
+XJSE_SYS=PSP make -C expat/
+XJSE_SYS=PSP make -C xgg/
+XJSE_SYS=PSP make -C xtk/
+#XJSE_SYS=PSP make -f Makefile.kmprx 
+psp-gcc -c intraFont.c -I $(PATH_TO_PSPDEV)/pspdev/psp/sdk/include
+psp-ar ruv libintrafont.a ./intraFont.o 
+mv intrafont/libintrafont.a ./PSP.OBJ/
+XJSE_SYS=PSP make ./PSP.OBJ/cyeonna.prx
+
+echo "see under ./PSP.OBJ"
+echo "put cyeonna.prx under GAME folder of your memstick"
+echo "  and launch from GAME menu on *homebrew-enabled* PSP."
+
