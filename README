@@ -82,9 +82,7 @@ XJSE_SYS=PSP make -C expat/
 XJSE_SYS=PSP make -C xgg/
 XJSE_SYS=PSP make -C xtk/
 #XJSE_SYS=PSP make -f Makefile.kmprx 
-psp-gcc -c intraFont.c -I $(PATH_TO_PSPDEV)/pspdev/psp/sdk/include
-psp-ar ruv libintrafont.a ./intraFont.o 
-mv intrafont/libintrafont.a ./PSP.OBJ/
+XJSE_SYS=PSP make -C intrafont/
 XJSE_SYS=PSP make ./PSP.OBJ/cyeonna.prx
 
 echo "see under ./PSP.OBJ"
